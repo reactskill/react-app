@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import useEnglish from './useEnglish'
 
 function App() {
 
-  const [count, setCount] = useState(0)
+  const [ word, addOne ] = useEnglish(0)
 
   return (
     <div className="App">
-      <p>current count: <span>{ count }</span></p>
-      <button onClick={() => setCount(count + 1)}>add 1</button>
+      <p>current count: <span>{ word }</span></p>
+      <button onClick={() => addOne()}>add 1</button>
     </div>
   );
 }
