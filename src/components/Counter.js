@@ -2,9 +2,9 @@ import React from 'react'
 
 class Counter extends React.Component {
 
-  constructor() {
-    super()
-    this.state = { count: 0 }
+  constructor(props) {
+    super(props)
+    this.state = { count: this.props.startAt }
   }
 
   addOne() {
@@ -15,6 +15,7 @@ class Counter extends React.Component {
   render() {
     return (
       <div>
+        <p>Started At: <span>{ this.props.startAt }</span></p>
         <p>current count: <span>{ this.state.count }</span></p>
         <p>
           <button onClick={() => this.addOne()}>Add one</button>
