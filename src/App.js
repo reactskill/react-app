@@ -1,8 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
 
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    let isMounted = true
+    fetch('/count').then(res => res.json()).then(serverData => {
+      if(isMounted) {
+        setCount(serverData.count)
+      }
+    })
+    return () => {
+      isMounted = false
+    }
+  }, [])
 
   return (
     <div className="App">
