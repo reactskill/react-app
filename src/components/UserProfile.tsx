@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 function UserProfile(props) {
 
-  const [ likes, setLikes ] = useState(1)
+  const [ likes, setLikes ] = useState<number | null>(1)
   
   const addLike = () => setLikes(likes + 1)
 
