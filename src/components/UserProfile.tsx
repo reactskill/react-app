@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-interface UserProfileProps {
+export interface UserProfileProps {
   name: string;
   occupation: string;
 }
