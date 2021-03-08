@@ -1,6 +1,11 @@
 import { useState } from 'react'
 
-function UserProfile(props) {
+interface UserProfileProps {
+  name: string;
+  occupation: string;
+}
+
+function UserProfile(props: UserProfileProps) {
 
   const [ likes, setLikes ] = useState<number | null>(1)
   
